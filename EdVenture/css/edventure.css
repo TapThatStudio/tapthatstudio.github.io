@@ -779,4 +779,21 @@
       justify-content: center;
       width: 100%;
     }
+
+    .nav-share {
+        color: var(--muted-strong);
+        padding: 10px 14px;
+        border: 1px solid transparent;
+        border-radius: 999px;
+        background: transparent;
+        font: inherit;
+        font-size: 0.92rem;
+        cursor: pointer;
+        transition: 180ms ease;
+      }
+      
+      .nav-share:hover {
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.08);
+      }
   }
