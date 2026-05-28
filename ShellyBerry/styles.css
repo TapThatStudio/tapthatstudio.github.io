@@ -273,6 +273,24 @@
     margin: 4px 0;
   }
   
+  .studio-credit {
+    display: inline-flex;
+    margin-top: 14px;
+    color: rgba(199, 168, 107, 0.72);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition:
+      color 180ms ease,
+      transform 180ms ease;
+  }
+  
+  .studio-credit:hover {
+    color: var(--gold);
+    transform: translateY(-1px);
+  }
+  
   @keyframes cardReveal {
     from {
       opacity: 0;
