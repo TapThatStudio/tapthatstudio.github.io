@@ -1,5 +1,13 @@
 const shareButton = document.getElementById("shareButton");
 
+const resetShareButtonText = () => {
+  if (!shareButton) return;
+
+  window.setTimeout(() => {
+    shareButton.textContent = "Share this card";
+  }, 1800);
+};
+
 shareButton?.addEventListener("click", async () => {
   const shareData = {
     title: "Shelly Berry | Arizona Real Estate",
@@ -12,7 +20,7 @@ shareButton?.addEventListener("click", async () => {
       await navigator.share(shareData);
       return;
     } catch {
-      // User cancelled or sharing failed. Fall back to copying the link.
+      // User cancelled sharing or the share failed. Fall back to copying.
     }
   }
 
@@ -23,7 +31,5 @@ shareButton?.addEventListener("click", async () => {
     shareButton.textContent = "Copy this page link";
   }
 
-  window.setTimeout(() => {
-    shareButton.textContent = "Share this card";
-  }, 1800);
+  resetShareButtonText();
 });
