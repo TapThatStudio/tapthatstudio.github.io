@@ -1,0 +1,199 @@
+:root {
+    --bg: #f7f5f0;
+    --card: #ffffff;
+    --text: #171717;
+    --muted: #6f6a62;
+    --line: rgba(23, 23, 23, 0.12);
+    --accent: #151515;
+    --accent-soft: #efebe4;
+    --shadow: 0 24px 80px rgba(20, 20, 20, 0.08);
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    min-height: 100%;
+  }
+  
+  body {
+    min-height: 100vh;
+    margin: 0;
+    font-family:
+      Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", sans-serif;
+    color: var(--text);
+    background:
+      radial-gradient(circle at top, rgba(255, 255, 255, 0.95), transparent 42%),
+      var(--bg);
+  }
+  
+  a,
+  button {
+    font: inherit;
+  }
+  
+  .page-shell {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 28px 18px;
+  }
+  
+  .card {
+    width: min(100%, 430px);
+    padding: 38px 28px 26px;
+    border: 1px solid var(--line);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.86);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(18px);
+    text-align: center;
+  }
+  
+  .eyebrow {
+    margin: 0 0 18px;
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  
+  h1 {
+    margin: 0;
+    font-family:
+      Georgia, "Times New Roman", Times, serif;
+    font-size: clamp(3rem, 14vw, 4.8rem);
+    font-weight: 400;
+    letter-spacing: -0.07em;
+    line-height: 0.9;
+  }
+  
+  .subtitle {
+    max-width: 320px;
+    margin: 22px auto 0;
+    color: var(--text);
+    font-size: 1.05rem;
+    line-height: 1.55;
+  }
+  
+  .details {
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+  
+  .actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 30px;
+  }
+  
+  .actions-three {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .actions-three .button:last-child {
+    grid-column: 1 / -1;
+  }
+  
+  .button,
+  .share-button {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--text);
+    background: transparent;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+      transform 180ms ease,
+      background 180ms ease,
+      border-color 180ms ease;
+  }
+  
+  .button:hover,
+  .share-button:hover {
+    transform: translateY(-1px);
+    background: var(--accent-soft);
+    border-color: rgba(23, 23, 23, 0.2);
+  }
+  
+  .button-primary {
+    color: #ffffff;
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+  
+  .button-primary:hover {
+    background: #000000;
+  }
+  
+  .link-list {
+    display: grid;
+    gap: 10px;
+    margin-top: 26px;
+    text-align: left;
+  }
+  
+  .link-list a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 15px 2px;
+    border-bottom: 1px solid var(--line);
+    color: var(--text);
+    text-decoration: none;
+    transition:
+      color 180ms ease,
+      padding 180ms ease;
+  }
+  
+  .link-list a:hover {
+    padding-left: 6px;
+    color: #000000;
+  }
+  
+  .link-list span {
+    color: var(--muted);
+  }
+  
+  .share-button {
+    width: 100%;
+    margin-top: 26px;
+  }
+  
+  footer {
+    margin-top: 28px;
+    color: var(--muted);
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+  
+  footer p {
+    margin: 4px 0;
+  }
+  
+  @media (max-width: 380px) {
+    .card {
+      padding: 32px 22px 24px;
+      border-radius: 26px;
+    }
+  
+    .actions,
+    .actions-three {
+      grid-template-columns: 1fr;
+    }
+  
+    .actions-three .button:last-child {
+      grid-column: auto;
+    }
+  }
