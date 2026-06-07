@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Gardner;Josh;;;
+FN:Josh Gardner
+ORG:Minuteman Press Columbia Square
+TITLE:Owner
+TEL;TYPE=WORK,VOICE:5032236661
+EMAIL;TYPE=WORK:ColumbiaSquare@MinutemanPress.com
+ADR;TYPE=WORK:;;1308 SW 2nd Ave;Portland;OR;97201;United States
+URL:https://minuteman.com/us/locations/or/portland24/
+END:VCARD
