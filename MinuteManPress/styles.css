@@ -677,3 +677,123 @@
     }
   }
   
+  /* Mobile hero refinements: keeps the branded look but gives the first view more breathing room */
+  @media (max-width: 680px) {
+    .hero-grid {
+      gap: 18px;
+    }
+  
+    .hero-copy {
+      justify-content: flex-start;
+      min-height: auto;
+      padding: 34px 24px 26px;
+    }
+  
+    .hero-copy::after {
+      opacity: 0.45;
+      top: 20px;
+      right: 18px;
+      font-size: clamp(2.35rem, 14vw, 3.25rem);
+      max-width: 280px;
+      line-height: 0.86;
+    }
+  
+    .eyebrow {
+      max-width: 250px;
+      margin-bottom: 14px;
+      font-size: 0.68rem;
+      line-height: 1.35;
+      letter-spacing: 0.15em;
+    }
+  
+    h1 {
+      max-width: 330px;
+      margin-bottom: 16px;
+      font-size: clamp(2.35rem, 12.6vw, 3.55rem);
+      line-height: 0.96;
+      letter-spacing: -0.065em;
+    }
+  
+    .hero-lede {
+      margin-bottom: 22px;
+      font-size: 1rem;
+      line-height: 1.52;
+    }
+  
+    .hero-actions {
+      gap: 10px;
+    }
+  
+    .hero-meta {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin-top: 20px;
+    }
+  
+    .hero-meta span {
+      width: 100%;
+      border-radius: 16px;
+      padding: 10px 12px;
+      font-size: 0.8rem;
+    }
+  
+    .contact-card {
+      padding: 24px;
+    }
+  
+    .contact-card h2 {
+      margin-top: 34px;
+    }
+  }
+  
+  @media (max-width: 430px) {
+    .site-header {
+      padding: 9px;
+    }
+  
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+    }
+  
+    .brand-text strong {
+      font-size: 0.9rem;
+    }
+  
+    .share-button {
+      min-height: 38px;
+      padding: 8px 10px;
+      font-size: 0.82rem;
+    }
+  
+    .hero {
+      padding-top: 44px;
+    }
+  
+    .hero-copy {
+      padding: 30px 20px 22px;
+    }
+  
+    .hero-copy::before {
+      inset: 10px;
+    }
+  
+    .hero-copy::after {
+      opacity: 0.32;
+      font-size: clamp(2rem, 13vw, 2.85rem);
+      max-width: 230px;
+    }
+  
+    h1 {
+      max-width: 300px;
+      font-size: clamp(2.18rem, 12vw, 3rem);
+      line-height: 0.98;
+    }
+  
+    .button {
+      min-height: 46px;
+      padding: 13px 16px;
+    }
+  }
+  
