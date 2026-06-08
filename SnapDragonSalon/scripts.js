@@ -40,7 +40,7 @@ if (shareButton) {
 
     const shareData = {
       title: "Kandy Russell | Snapdragon Salon",
-      text: "Custom color, lived-in shape, and personal hair craft with Kandy Russell at Snapdragon Salon.",
+      text: "Master Stylist & Snapdragon Founder.",
       url: profileUrl,
     };
 
