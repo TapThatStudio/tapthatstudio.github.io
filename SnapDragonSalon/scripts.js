@@ -30,3 +30,31 @@ window.addEventListener(
   },
   { passive: true }
 );
+
+const shareButton = document.querySelector(".share-button");
+
+if (shareButton) {
+  shareButton.addEventListener("click", async () => {
+    const originalText = shareButton.innerHTML;
+
+    const shareData = {
+      title: "Kandy Russell | Snapdragon Salon",
+      text: "Custom color, lived-in shape, and personal hair craft with Kandy Russell at Snapdragon Salon.",
+      url: window.location.href
+    };
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+      } else if (navigator.clipboard) {
+        await navigator.clipboard.writeText(window.location.href);
+        shareButton.textContent = "Link copied";
+        setTimeout(() => {
+          shareButton.innerHTML = originalText;
+        }, 1800);
+      }
+    } catch {
+      // Share was cancelled or unavailable. No action needed.
+    }
+  });
+}
