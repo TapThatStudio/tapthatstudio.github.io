@@ -207,6 +207,7 @@
   h1 {
     max-width: 760px;
     font-size: clamp(3.1rem, 8vw, 7.1rem);
+    text-wrap: balance;
   }
   
   h2 {
@@ -641,7 +642,9 @@
     }
   
     h1 {
-      font-size: clamp(3.05rem, 16vw, 4.75rem);
+      font-size: clamp(2.58rem, 11.6vw, 4.15rem);
+      line-height: 1;
+      letter-spacing: -0.06em;
     }
   
     .hero-lede {
@@ -694,6 +697,16 @@
     }
   }
   
+  @media (max-width: 390px) {
+    h1 {
+      font-size: clamp(2.42rem, 10.8vw, 3.85rem);
+    }
+  
+    .hero-copy {
+      padding: 28px 24px;
+    }
+  }
+  
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -709,4 +722,3 @@
       transform: none;
     }
   }
-  
