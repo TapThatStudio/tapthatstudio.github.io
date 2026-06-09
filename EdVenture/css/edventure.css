@@ -925,4 +925,11 @@
       width: 100%;
       justify-content: center;
     }
+
+    .rules-note {
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
   }
