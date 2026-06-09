@@ -702,19 +702,25 @@ figcaption {
   max-width: 620px;
 }
 
-.visit-details p {
+.visit-details > div {
   display: grid;
-  grid-template-columns: 76px 1fr;
+  grid-template-columns: 76px minmax(0, 1fr);
   gap: 16px;
-  margin: 0;
+  align-items: baseline;
   color: rgba(38, 36, 31, 0.76);
 }
 
-.visit-details strong {
+.visit-details span {
   color: var(--deep-green);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.visit-details p {
+  margin: 0;
+  color: rgba(38, 36, 31, 0.76);
 }
 
 .visit-details a {
@@ -724,15 +730,15 @@ figcaption {
 }
 
 .visit-brand {
-  display: block;
-  margin: 14px 0 0;
-  padding-top: 16px;
+  width: fit-content;
+  margin: 16px 0 0;
+  padding-top: 14px;
   border-top: 1px solid rgba(36, 51, 36, 0.10);
-  color: var(--deep-green);
-  font-size: 0.78rem;
+  color: var(--deep-green) !important;
+  font-size: 0.76rem;
   font-weight: 800;
-  letter-spacing: 0.15em;
-  line-height: 1.45;
+  letter-spacing: 0.13em;
+  line-height: 1.4;
   text-transform: uppercase;
 }
 
@@ -922,17 +928,27 @@ figcaption {
     min-height: 280px;
   }
 
-  .visit-details p {
+  .visit-details {
+    max-width: none;
+  }
+
+  .visit-details > div {
     grid-template-columns: 1fr;
     gap: 2px;
     padding-bottom: 12px;
     border-bottom: 1px solid rgba(36, 51, 36, 0.10);
   }
 
+  .visit-details p {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
   .visit-brand {
+    width: 100%;
     margin-top: 4px;
     padding-top: 14px;
     font-size: 0.72rem;
-    letter-spacing: 0.13em;
+    letter-spacing: 0.11em;
   }
 }
