@@ -37,14 +37,12 @@ jobs:
         run: |
           echo "staging.tapthatstudio.com" > staging-site/CNAME
           touch staging-site/.nojekyll
-          cat > staging-site/robots.txt <<'EOF'
-          User-agent: *
-          Disallow: /
-          EOF
+          printf "User-agent: *\nDisallow: /\n" > staging-site/robots.txt
 
       - name: Commit and push staging site
         run: |
           cd staging-site
+
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
