@@ -1,0 +1,57 @@
+name: Deploy staging site
+
+on:
+  push:
+    branches:
+      - staging
+  workflow_dispatch:
+
+jobs:
+  deploy-staging:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source staging branch
+        uses: actions/checkout@v4
+        with:
+          ref: staging
+          path: source
+
+      - name: Checkout staging repo
+        uses: actions/checkout@v4
+        with:
+          repository: TapThatStudio/tapthatstudio-staging
+          ref: main
+          path: staging-site
+          token: ${{ secrets.STAGING_REPO_TOKEN }}
+
+      - name: Sync files to staging repo
+        run: |
+          rsync -av --delete \
+            --exclude ".git" \
+            --exclude ".github" \
+            --exclude "CNAME" \
+            source/ staging-site/
+
+      - name: Set staging custom domain and no-index hints
+        run: |
+          echo "staging.tapthatstudio.com" > staging-site/CNAME
+          touch staging-site/.nojekyll
+          cat > staging-site/robots.txt <<'EOF'
+          User-agent: *
+          Disallow: /
+          EOF
+
+      - name: Commit and push staging site
+        run: |
+          cd staging-site
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git add .
+            git commit -m "Deploy staging from tapthatstudio.github.io staging branch"
+            git push origin main
+          else
+            echo "No staging changes to deploy."
+          fi
