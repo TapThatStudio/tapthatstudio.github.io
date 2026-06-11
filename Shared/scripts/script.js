@@ -56,25 +56,35 @@ if (navToggle && nav) {
   });
 }
 
+const setCopiedState = (button, originalText) => {
+  button.classList.add('is-copied');
+  button.textContent = 'Link copied';
+
+  window.setTimeout(() => {
+    button.classList.remove('is-copied');
+    button.textContent = originalText;
+  }, 1800);
+};
+
 shareButtons.forEach((button) => {
   button.addEventListener('click', async () => {
-    const originalText = button.textContent;
+    const originalText = button.textContent.trim() || 'Share';
 
     const shareData = {
       title: 'TapThat Studio',
-      text: 'Premium NFC cards and mobile landing pages that make first impressions easier to act on.',
+      text: 'Premium NFC cards and custom tap experiences that make your business easier to remember, share, and act on.',
       url: 'https://tapthatstudio.com/'
     };
 
     try {
       if (navigator.share) {
         await navigator.share(shareData);
-      } else {
+        return;
+      }
+
+      if (navigator.clipboard) {
         await navigator.clipboard.writeText(shareData.url);
-        button.textContent = 'Link copied';
-        setTimeout(() => {
-          button.textContent = originalText;
-        }, 1800);
+        setCopiedState(button, originalText);
       }
     } catch (error) {
       console.warn('Share cancelled or failed:', error);

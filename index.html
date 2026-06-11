@@ -5,24 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="TapThat Studio creates premium NFC-ready digital business cards and mobile-first landing pages for professionals, teams, salons, real estate agents, print shops, and local businesses."
+    content="TapThat Studio creates premium NFC cards and custom tap experiences that pull the most important parts of your business into one clean, mobile-first page."
   />
   <meta name="theme-color" content="#101014" />
+
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="TapThat Studio | Tap. Impress. Get remembered." />
-  <meta property="og:description" content="Premium NFC cards and mobile landing pages that make your next introduction ridiculously easy to act on." />
+  <meta property="og:title" content="TapThat Studio | Custom Tap Experiences" />
+  <meta
+    property="og:description"
+    content="Premium NFC cards and custom tap pages that help people save, book, browse, follow, share, or inquire the moment they meet you."
+  />
   <meta property="og:url" content="https://tapthatstudio.com/" />
   <meta property="og:image" content="https://tapthatstudio.com/Shared/images/tapthat-og.png" />
+  <meta property="og:image:alt" content="TapThat Studio custom tap experience preview" />
+
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="TapThat Studio | Tap. Impress. Get remembered." />
-  <meta name="twitter:description" content="Premium NFC cards and mobile landing pages for professionals, teams, and local businesses." />
+  <meta name="twitter:title" content="TapThat Studio | Custom Tap Experiences" />
+  <meta
+    name="twitter:description"
+    content="Premium NFC cards and custom tap pages that make your business easier to remember, share, and act on."
+  />
   <meta name="twitter:image" content="https://tapthatstudio.com/Shared/images/tapthat-og.png" />
-  <title>TapThat Studio | NFC Cards, Landing Pages & Digital First Impressions</title>
+
+  <title>TapThat Studio | NFC Cards & Custom Tap Experiences</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap"
     rel="stylesheet"
   />
   <link rel="stylesheet" href="Shared/css/tapthat.css" />
@@ -47,12 +57,16 @@
       <span></span>
     </button>
 
-    <nav class="site-nav" data-nav>
+    <nav class="site-nav" data-nav aria-label="Primary navigation">
       <a href="#proofs">Proofs</a>
-      <a href="#work">What we make</a>
+      <a href="#experience">Tap experiences</a>
+      <a href="#everything">One tap away</a>
       <a href="#teams">For teams</a>
       <a href="#packages">Packages</a>
-      <button class="nav-share" type="button" data-share>Share</button>
+      <button class="nav-share" type="button" data-share aria-label="Share TapThat Studio">
+        <span aria-hidden="true">↗</span>
+        Share
+      </button>
       <a href="#contact" class="nav-cta">Start a project</a>
     </nav>
   </header>
@@ -63,33 +77,37 @@
       <div class="hero-glow hero-glow-two"></div>
 
       <div class="hero-content reveal">
-        <p class="eyebrow">NFC cards · Mobile landing pages · Memorable first taps</p>
+        <p class="eyebrow">NFC cards · QR codes · Custom tap experiences</p>
 
         <h1>Tap. Impress. Get remembered.</h1>
 
         <p class="hero-copy">
-          TapThat Studio turns a physical card, QR code, or simple link into a polished mobile experience — so people can save your contact, book, browse, follow, share, or inquire the moment they meet you.
+          TapThat Studio creates premium NFC cards and custom tap pages that pull the most important parts of your business into one clean, mobile-first experience — so people can save, book, browse, follow, share, or inquire the moment they meet you.
         </p>
 
         <div class="hero-actions">
           <a class="button primary" href="#contact">Create a proof of concept</a>
           <a class="button ghost" href="#proofs">View examples</a>
-          <button class="button ghost" type="button" data-share>Share TapThat</button>
+          <button class="button ghost share-button" type="button" data-share>
+            <span aria-hidden="true">↗</span>
+            Share TapThat
+          </button>
         </div>
 
         <div class="trust-row" aria-label="Key benefits">
           <span>No app required</span>
           <span>Built to share</span>
           <span>iPhone + Android friendly</span>
+          <span>White-glove setup</span>
         </div>
       </div>
 
       <div class="hero-card reveal" aria-label="Sample TapThat landing card">
         <div class="phone-shell">
           <div class="phone-top"></div>
-          <div class="tap-prompt">Live tap preview</div>
 
           <div class="profile-card">
+            <p class="mini-eyebrow">Live tap preview</p>
             <div class="avatar">DH</div>
             <p class="mini-eyebrow">Desert Homes Realty</p>
             <h2>Dana Hart</h2>
@@ -128,7 +146,7 @@
           <span class="icon">✦</span>
           <h3>Snapdragon Salon</h3>
           <p>
-            A polished stylist landing page concept for a high-end salon experience, designed around booking, trust, and premium presentation.
+            A polished stylist tap experience for a premium salon, designed around booking, trust, brand consistency, and personal connection.
           </p>
           <a class="button ghost full" href="/SnapDragonSalon/">See the salon demo</a>
         </article>
@@ -137,7 +155,7 @@
           <span class="icon">⌁</span>
           <h3>Minuteman Press</h3>
           <p>
-            A professional local business landing page concept for print, signage, customer follow-up, and easy contact.
+            A focused local business page for print, signage, customer follow-up, quick contact, and making the next step obvious.
           </p>
           <a class="button ghost full" href="/MinuteManPress/">See the print shop demo</a>
         </article>
@@ -146,21 +164,19 @@
           <span class="icon">↗</span>
           <h3>Real Estate Digital Card</h3>
           <p>
-            A clean, referral-friendly digital page for agents who want to share contact info, listings, and calls-to-action quickly.
+            A clean, referral-friendly experience for agents who want to share contact info, listings, calls-to-action, and credibility fast.
           </p>
           <a class="button ghost full" href="/ShellyBerry/">See the realtor demo</a>
         </article>
       </div>
     </section>
 
-    <section id="work" class="section section-pad">
+    <section id="experience" class="section section-pad">
       <div class="section-heading reveal">
         <p class="eyebrow">What we make</p>
-
-        <h2>A physical card people actually do something with.</h2>
-
+        <h2>Custom tap experiences for businesses that want to look sharp.</h2>
         <p>
-          The card gets their attention. The landing page gives them the next move — save, book, call, follow, browse, refer, or buy.
+          A TapThat experience is not just a web page. It is a curated, mobile-first introduction that makes your business easier to understand, easier to remember, and easier to act on.
         </p>
       </div>
 
@@ -169,15 +185,15 @@
           <span class="icon">✦</span>
           <h3>NFC business cards</h3>
           <p>
-            Tap-ready cards that can open your page instantly, without asking people to type, search, or remember your details later.
+            Tap-ready cards that open your custom experience instantly, without asking people to type, search, or remember your details later.
           </p>
         </article>
 
         <article class="feature-card reveal">
           <span class="icon">⌁</span>
-          <h3>Mobile landing pages</h3>
+          <h3>Custom Tap Pages</h3>
           <p>
-            Beautiful mobile-first pages for contact info, booking links, services, portfolio work, listings, reviews, menus, promos, and social links.
+            A polished page built around the most important parts of your business: booking, services, offers, reviews, menus, listings, photos, socials, and contact options.
           </p>
         </article>
 
@@ -185,9 +201,37 @@
           <span class="icon">↻</span>
           <h3>Update without reprinting</h3>
           <p>
-            Change links, photos, specials, featured listings, team info, or seasonal promos while the card in someone’s hand still works.
+            Change links, photos, specials, featured work, team info, or seasonal promos while the card in someone’s hand still works.
           </p>
         </article>
+      </div>
+    </section>
+
+    <section id="everything" class="showcase section-pad">
+      <div class="showcase-copy reveal">
+        <p class="eyebrow">Everything important, one tap away</p>
+        <h2>We turn business clutter into a clear next step.</h2>
+        <p>
+          Most businesses already have the pieces: a website, booking link, Google profile, social pages, reviews, photos, forms, offers, and contact info. TapThat Studio pulls the most useful pieces into one clean experience so customers do not have to hunt.
+        </p>
+        <p>
+          The result is a white-glove digital introduction that makes you look polished, prepared, and easy to choose.
+        </p>
+      </div>
+
+      <div class="tap-list reveal" aria-label="Common tap page actions">
+        <span>Save contact</span>
+        <span>Book now</span>
+        <span>Call or text</span>
+        <span>Get directions</span>
+        <span>View services</span>
+        <span>Browse listings</span>
+        <span>See reviews</span>
+        <span>View menu</span>
+        <span>Follow socials</span>
+        <span>Share with a friend</span>
+        <span>Request a quote</span>
+        <span>Claim an offer</span>
       </div>
     </section>
 
@@ -203,9 +247,10 @@
 
         <ul class="check-list">
           <li>Designed to look premium on a phone</li>
-          <li>Built for real professionals, not gimmicks</li>
+          <li>Built around your goals, not a generic template</li>
           <li>Great for salons, real estate agents, print shops, restaurants, service businesses, consultants, creators, and events</li>
           <li>Share-ready by default, with clean previews and simple calls to action</li>
+          <li>White-glove setup that helps you look good from the first tap</li>
         </ul>
       </div>
 
@@ -217,12 +262,12 @@
 
         <div>
           <strong>02</strong>
-          <span>Open the page</span>
+          <span>Open the experience</span>
         </div>
 
         <div>
           <strong>03</strong>
-          <span>Save, book, follow, browse, or inquire</span>
+          <span>Save, book, follow, browse, share, or inquire</span>
         </div>
       </div>
     </section>
@@ -234,7 +279,7 @@
         <h2>One polished brand system, many personal introductions.</h2>
 
         <p>
-          TapThat Studio can create a consistent landing page system for businesses with multiple people, services, locations, or campaigns. Each page can feel personal while still elevating the company brand.
+          TapThat Studio can create a consistent tap experience system for businesses with multiple people, services, locations, or campaigns. Each page can feel personal while still elevating the company brand.
         </p>
       </div>
 
@@ -272,7 +317,7 @@
         <h2>Start with one great tap. Grow into a full system.</h2>
 
         <p>
-          Choose a simple starting point, then shape it around the business. Every TapThat page is built to be mobile-first, easy to act on, and polished enough to send to real clients.
+          Choose a simple starting point, then shape it around the business. Every TapThat experience is built to be mobile-first, easy to act on, and polished enough to send to real clients.
         </p>
       </div>
 
@@ -283,7 +328,7 @@
           <p class="price">Custom quote</p>
 
           <ul>
-            <li>One polished mobile landing page</li>
+            <li>One polished mobile tap page</li>
             <li>Contact, socials, and primary call-to-action links</li>
             <li>NFC card and QR code setup guidance</li>
           </ul>
@@ -297,7 +342,7 @@
           <p class="price">Custom quote</p>
 
           <ul>
-            <li>Expanded landing page with sections for services, listings, booking, reviews, or portfolio work</li>
+            <li>Expanded experience with sections for services, listings, booking, reviews, offers, menus, or portfolio work</li>
             <li>Downloadable contact card option</li>
             <li>Photo, link, and copy polish</li>
             <li>Launch-ready hosting setup</li>
@@ -330,7 +375,10 @@
 
       <div class="cta-actions">
         <a class="button primary" href="#contact">Create my TapThat page</a>
-        <button class="button ghost" type="button" data-share>Share this idea</button>
+        <button class="button ghost share-button" type="button" data-share>
+          <span aria-hidden="true">↗</span>
+          Share this idea
+        </button>
       </div>
     </section>
 
@@ -338,10 +386,10 @@
       <div class="contact-card reveal">
         <p class="eyebrow">Start a project</p>
 
-        <h2>Tell me what you want your card, QR code, or landing page to make happen.</h2>
+        <h2>Tell me what you want your card, QR code, or tap experience to make happen.</h2>
 
         <p>
-          Need a polished digital card for yourself, a client-specific landing page, or a proof of concept for your business? Send your profession, website, key links, and the main action you want people to take.
+          Need a polished digital card for yourself, a client-specific tap page, or a proof of concept for your business? Send your profession, website, key links, and the main action you want people to take.
         </p>
 
         <div class="contact-actions">
@@ -352,7 +400,8 @@
             Email TapThat Studio
           </a>
 
-          <button class="button ghost" type="button" data-share>
+          <button class="button ghost share-button" type="button" data-share>
+            <span aria-hidden="true">↗</span>
             Share TapThat Studio
           </button>
         </div>
