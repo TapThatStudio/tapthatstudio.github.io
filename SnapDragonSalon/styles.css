@@ -1338,3 +1338,81 @@ body {
     overflow-wrap: anywhere;
   }
 }
+
+/* =========================================================
+   Mobile sticky header + compact scrolled state
+   Requires the small scripts.js listener provided separately.
+   ========================================================= */
+
+html {
+  scroll-padding-top: 104px;
+}
+
+@media (max-width: 620px) {
+  .site-header {
+    position: fixed;
+    top: calc(10px + env(safe-area-inset-top));
+    left: 10px;
+    right: 10px;
+    width: auto;
+    max-width: none;
+    transform: none;
+    z-index: 100;
+    padding: 10px 10px 10px 14px;
+    border-radius: 999px;
+    background: rgba(255, 250, 242, 0.88);
+    box-shadow: 0 12px 32px rgba(23, 34, 23, 0.12);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    transition:
+      top 220ms ease,
+      padding 220ms ease,
+      background 220ms ease,
+      box-shadow 220ms ease,
+      border-color 220ms ease;
+  }
+
+  .site-header .brand-logo {
+    width: 132px;
+    transition: width 220ms ease;
+  }
+
+  .site-header .logo-fallback {
+    transition: font-size 220ms ease;
+  }
+
+  .site-header .nav-cta {
+    min-height: 42px;
+    padding: 10px 15px;
+    transition:
+      min-height 220ms ease,
+      padding 220ms ease,
+      font-size 220ms ease;
+  }
+
+  .site-header.is-scrolled {
+    top: calc(6px + env(safe-area-inset-top));
+    padding: 7px 8px 7px 12px;
+    background: rgba(255, 250, 242, 0.94);
+    border-color: rgba(36, 51, 36, 0.16);
+    box-shadow: 0 10px 26px rgba(23, 34, 23, 0.16);
+  }
+
+  .site-header.is-scrolled .brand-logo {
+    width: 112px;
+  }
+
+  .site-header.is-scrolled .logo-fallback {
+    font-size: 1.16rem;
+  }
+
+  .site-header.is-scrolled .nav-cta {
+    min-height: 36px;
+    padding: 8px 13px;
+    font-size: 0.69rem;
+  }
+
+  .hero {
+    padding-top: calc(92px + env(safe-area-inset-top));
+  }
+}
