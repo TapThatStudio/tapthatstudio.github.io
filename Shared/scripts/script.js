@@ -3,6 +3,7 @@ const nav = document.querySelector('[data-nav]');
 const navToggle = document.querySelector('[data-nav-toggle]');
 const year = document.querySelector('[data-year]');
 const revealItems = document.querySelectorAll('.reveal');
+const shareButtons = document.querySelectorAll('[data-share]');
 
 const closeNav = () => {
   if (!nav || !navToggle) return;
@@ -35,8 +36,8 @@ if (navToggle && nav) {
     navToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
   });
 
-  nav.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', closeNav);
+  nav.querySelectorAll('a, button').forEach((item) => {
+    item.addEventListener('click', closeNav);
   });
 
   document.addEventListener('click', (event) => {
@@ -54,6 +55,42 @@ if (navToggle && nav) {
     }
   });
 }
+
+const setCopiedState = (button, originalText) => {
+  button.classList.add('is-copied');
+  button.textContent = 'Link copied';
+
+  window.setTimeout(() => {
+    button.classList.remove('is-copied');
+    button.textContent = originalText;
+  }, 1800);
+};
+
+shareButtons.forEach((button) => {
+  button.addEventListener('click', async () => {
+    const originalText = button.textContent.trim() || 'Share';
+
+    const shareData = {
+      title: 'TapThat Studio',
+      text: 'Premium NFC cards and custom tap experiences that make your business easier to remember, share, and act on.',
+      url: 'https://tapthatstudio.com/'
+    };
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+        return;
+      }
+
+      if (navigator.clipboard) {
+        await navigator.clipboard.writeText(shareData.url);
+        setCopiedState(button, originalText);
+      }
+    } catch (error) {
+      console.warn('Share cancelled or failed:', error);
+    }
+  });
+});
 
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver(
