@@ -63,4 +63,17 @@ if (shareButton) {
       // Share was cancelled or unavailable. No action needed.
     }
   });
+  // Compact the mobile header after the visitor begins scrolling.
+(() => {
+  const header = document.querySelector(".site-header");
+
+  if (!header) return;
+
+  const updateHeader = () => {
+    header.classList.toggle("is-scrolled", window.scrollY > 48);
+  };
+
+  updateHeader();
+  window.addEventListener("scroll", updateHeader, { passive: true });
+})();
 }
