@@ -1201,3 +1201,140 @@ font-size: clamp(1.06rem, 1.7vw, 1.34rem);
 }
 }
 
+/* =========================================================
+   Responsive stabilization
+   Keeps the stylist hero aligned and full-width on phones.
+   Place this block last so it wins the cascade.
+   ========================================================= */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.hero,
+.hero-content,
+.stylist-hero-card,
+.stylist-portrait,
+.stylist-identity,
+.hero-story {
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    width: 100%;
+    padding: 104px 20px 70px;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 700px;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: stretch;
+    gap: 52px;
+  }
+
+  .stylist-hero-card {
+    width: 100%;
+    max-width: 540px;
+    justify-self: center;
+  }
+
+  .hero-story {
+    width: 100%;
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 620px) {
+  .site-header {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    width: auto;
+    max-width: none;
+    transform: none;
+  }
+
+  .hero {
+    width: 100%;
+    min-height: auto;
+    padding:
+      calc(84px + env(safe-area-inset-top))
+      14px
+      58px;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    gap: 44px;
+  }
+
+  .stylist-hero-card {
+    width: 100%;
+    max-width: none;
+    justify-self: stretch;
+    padding: 8px;
+    border-radius: 30px;
+  }
+
+  .stylist-hero-card::before {
+    inset: 14px 10px -10px;
+    border-radius: 28px;
+    background: rgba(141, 154, 88, 0.24);
+  }
+
+  .stylist-portrait {
+    width: 100%;
+    aspect-ratio: 4 / 4.55;
+  }
+
+  .stylist-identity {
+    width: 100%;
+  }
+
+  .stylist-identity h1 {
+    max-width: 100%;
+    font-size: clamp(3.2rem, 15.2vw, 4.65rem);
+    overflow-wrap: normal;
+  }
+
+  .stylist-specialty {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.15rem 0.35rem;
+  }
+
+  .stylist-specialty span {
+    margin: 0;
+  }
+
+  .quick-actions {
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .quick-actions a,
+  .quick-actions button {
+    min-width: 0;
+  }
+
+  .hero-story {
+    width: 100%;
+    max-width: none;
+    padding-inline: 4px;
+  }
+
+  .hero-story h2 {
+    max-width: 100%;
+    font-size: clamp(3rem, 13.5vw, 4.65rem);
+    overflow-wrap: anywhere;
+  }
+}
