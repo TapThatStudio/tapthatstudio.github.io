@@ -1144,7 +1144,8 @@ font-size: clamp(1.06rem, 1.7vw, 1.34rem);
 }
 
 .stylist-hero-card::before {
-  inset: 26px -8px -12px 26px;
+  inset: 14px 10px -10px 10px;
+  background: rgba(141, 154, 88, 0.24);
   border-radius: 28px;
 }
 
