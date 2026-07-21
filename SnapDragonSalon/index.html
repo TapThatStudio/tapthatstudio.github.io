@@ -53,51 +53,74 @@
   </header>
 
   <main id="main">
-    <section class="hero">
+    <section class="hero" aria-labelledby="kandy-name">
       <div class="hero-bg" aria-hidden="true"></div>
 
       <div class="hero-content">
-        <div class="hero-copy" data-reveal>
-          <p class="eyebrow">Master Stylist · Founder · Color Specialist</p>
-          <aside class="hero-card" data-reveal>
-            <div class="portrait-frame">
+        <article class="stylist-hero-card" data-reveal>
+          <div class="stylist-portrait">
+            <img
+              src="assets/kandy-russell.jpg"
+              alt="Kandy Russell, Master Stylist and Salon Founder at Snapdragon Salon"
+              onerror="this.style.display='none'; this.parentElement.classList.add('is-placeholder');"
+            />
+            <div class="portrait-placeholder">
+              <span>Kandy Russell</span>
+              <small>Master Stylist · Salon Founder</small>
+            </div>
+
+            <a
+              class="portrait-brand"
+              href="https://www.snapdragon-salon.com/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Visit the Snapdragon Salon website"
+            >
               <img
-                src="assets/kandy-russell.jpg"
-                alt="Kandy Russell of Snapdragon Salon"
-                onerror="this.style.display='none'; this.parentElement.classList.add('is-placeholder');"
+                src="assets/snapdragon-logo-black.png"
+                alt="Snapdragon Salon"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"
               />
-              <div class="portrait-placeholder">
-                <span>Kandy Russell</span>
-                <small>Master Stylist · Founder</small>
-              </div>
-            </div>
-  
-            <div class="card-caption">
-              <span>Snapdragon Founder</span>
-              <strong>Kandy Russell</strong>
-            </div>
-          </aside>
-
-          <h1>Hair that feels like you — only more intentional.</h1>
-
-          <p class="hero-intro">
-            Custom color, lived-in shape, and the quiet magic of truly personal hair
-            with Kandy Russell, founder of Snapdragon Salon.
-          </p>
-
-          <div class="hero-actions">
-            <a class="button primary" href="https://www.snapdragon-salon.com/team#book-now" target="_blank" rel="noopener">
-              Book with Kandy
-            </a>
-            <a class="button secondary" href="#services">
-              Explore her craft
+              <span class="logo-fallback">Snapdragon</span>
             </a>
           </div>
+
+          <div class="stylist-identity">
+            <p class="eyebrow">Meet your stylist</p>
+            <h1 id="kandy-name">Kandy Russell</h1>
+            <p class="stylist-specialty">Master Stylist <span aria-hidden="true">·</span> Salon Founder</p>
+
+            <a
+              class="button primary hero-book-button"
+              href="https://www.snapdragon-salon.com/team#book-now"
+              target="_blank"
+              rel="noopener"
+            >
+              Book with Kandy
+            </a>
+
+            <div class="quick-actions" aria-label="Quick profile actions">
+              <a href="tel:+16026902629">Call</a>
+              <a href="#services">Services</a>
+              <button class="quick-action-share share-button" type="button" aria-label="Share Kandy Russell's profile">
+                Share
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <div class="hero-story" data-reveal>
+          <p class="eyebrow">Personal hair craft</p>
+          <h2>Hair that feels like you — only more intentional.</h2>
+          <p>
+            Custom color, lived-in shape, and the quiet magic of truly personal hair,
+            shaped by nearly three decades behind the chair.
+          </p>
 
           <div class="hero-proof" aria-label="Stylist highlights">
             <span>Nearly 30 years behind the chair</span>
             <span>Color-focused craft</span>
-            <span>Curl & texture-aware</span>
+            <span>Curl &amp; texture-aware</span>
           </div>
         </div>
       </div>
