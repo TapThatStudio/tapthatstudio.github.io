@@ -1,111 +1,95 @@
-const header = document.querySelector('[data-header]');
-const nav = document.querySelector('[data-nav]');
-const navToggle = document.querySelector('[data-nav-toggle]');
-const year = document.querySelector('[data-year]');
-const revealItems = document.querySelectorAll('.reveal');
-const shareButtons = document.querySelectorAll('[data-share]');
+(() => {
+  "use strict";
 
-const closeNav = () => {
-  if (!nav || !navToggle) return;
+  const demos = {
+    stylist: { initials: "KR", brand: "Snapdragon Salon", name: "Kandy Russell", role: "Master Stylist · Salon Founder", accent: "#d2a75f", actions: ["Book an appointment", "Explore services", "Meet the salon", "Save contact"] },
+    property: { initials: "MC", brand: "Apex Property Group", name: "Maya Chen", role: "Regional Property Manager", accent: "#87a79a", actions: ["View managed properties", "Owner resources", "Resident portal", "Save contact"] },
+    realtor: { initials: "SB", brand: "Arizona City Home", name: "Shelly Berry", role: "Real Estate · Phoenix Metro", accent: "#b99362", actions: ["View active listings", "Schedule a showing", "Read client reviews", "Save contact"] },
+    print: { initials: "JG", brand: "Minuteman Press", name: "Josh Gardner", role: "Print · Signs · Marketing", accent: "#d5a746", actions: ["Request a quote", "View print services", "Get directions", "Call the shop"] },
+    tech: { initials: "AA", brand: "Li9 Technology Solutions", name: "Armando Arias", role: "Founder · President · CEO", accent: "#caa875", actions: ["Explore capabilities", "View solutions", "Start a conversation", "Share profile"] }
+  };
 
-  nav.classList.remove('open');
-  document.body.classList.remove('nav-open');
-  navToggle.setAttribute('aria-expanded', 'false');
-  navToggle.setAttribute('aria-label', 'Open navigation');
-};
+  const menuToggle = document.querySelector("[data-menu-toggle]");
+  const nav = document.querySelector("[data-nav]");
 
-if (year) {
-  year.textContent = new Date().getFullYear();
-}
+  const closeMenu = () => {
+    if (!menuToggle || !nav) return;
+    nav.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open menu");
+  };
 
-const setHeaderState = () => {
-  if (!header) return;
-  header.classList.toggle('scrolled', window.scrollY > 12);
-};
-
-setHeaderState();
-window.addEventListener('scroll', setHeaderState, { passive: true });
-
-if (navToggle && nav) {
-  navToggle.addEventListener('click', (event) => {
-    event.stopPropagation();
-
-    const isOpen = nav.classList.toggle('open');
-    document.body.classList.toggle('nav-open', isOpen);
-    navToggle.setAttribute('aria-expanded', String(isOpen));
-    navToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+  menuToggle?.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
   });
 
-  nav.querySelectorAll('a, button').forEach((item) => {
-    item.addEventListener('click', closeNav);
-  });
+  nav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+  window.addEventListener("resize", () => { if (window.innerWidth > 820) closeMenu(); });
 
-  document.addEventListener('click', (event) => {
-    const clickedInsideNav = nav.contains(event.target);
-    const clickedToggle = navToggle.contains(event.target);
+  const tabs = [...document.querySelectorAll("[data-demo]")];
+  const profile = document.querySelector("[data-demo-profile]");
+  const miniCard = document.querySelector("[data-mini-card]");
+  const phone = document.querySelector("[data-demo-phone]");
+  const fields = {
+    initials: document.querySelector("[data-initials]"),
+    avatar: document.querySelector("[data-avatar]"),
+    brand: document.querySelector("[data-brand]"),
+    name: document.querySelector("[data-name]"),
+    role: document.querySelector("[data-role]"),
+    actions: document.querySelector("[data-actions]")
+  };
 
-    if (!clickedInsideNav && !clickedToggle) {
-      closeNav();
-    }
-  });
+  const selectDemo = (key) => {
+    const demo = demos[key];
+    if (!demo) return;
+    tabs.forEach((tab) => {
+      const active = tab.dataset.demo === key;
+      tab.classList.toggle("active", active);
+      tab.setAttribute("aria-selected", String(active));
+    });
+    miniCard?.style.setProperty("--accent", demo.accent);
+    phone?.style.setProperty("--accent", demo.accent);
+    fields.initials.textContent = demo.initials;
+    fields.avatar.textContent = demo.initials;
+    fields.brand.textContent = demo.brand;
+    fields.name.textContent = demo.name;
+    fields.role.textContent = demo.role;
+    fields.actions.replaceChildren(...demo.actions.map((action, index) => {
+      const row = document.createElement("div");
+      row.innerHTML = `<i>0${index + 1}</i><b></b><span aria-hidden="true">↗</span>`;
+      row.querySelector("b").textContent = action;
+      return row;
+    }));
+    profile?.animate([{ opacity: 0, transform: "translateY(10px)" }, { opacity: 1, transform: "none" }], { duration: 350, easing: "ease" });
+  };
 
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-      closeNav();
-    }
-  });
-}
+  tabs.forEach((tab) => tab.addEventListener("click", () => selectDemo(tab.dataset.demo)));
+  tabs.forEach((tab, index) => tab.addEventListener("keydown", (event) => {
+    if (!["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].includes(event.key)) return;
+    event.preventDefault();
+    const increment = ["ArrowRight", "ArrowDown"].includes(event.key) ? 1 : -1;
+    const next = tabs[(index + increment + tabs.length) % tabs.length];
+    next.focus();
+    selectDemo(next.dataset.demo);
+  }));
+  selectDemo("stylist");
 
-const setCopiedState = (button, originalText) => {
-  button.classList.add('is-copied');
-  button.textContent = 'Link copied';
-
-  window.setTimeout(() => {
-    button.classList.remove('is-copied');
-    button.textContent = originalText;
-  }, 1800);
-};
-
-shareButtons.forEach((button) => {
-  button.addEventListener('click', async () => {
-    const originalText = button.textContent.trim() || 'Share';
-
-    const shareData = {
-      title: 'TapThat Studio',
-      text: 'Premium NFC cards and custom tap experiences that make your business easier to remember, share, and act on.',
-      url: 'https://tapthatstudio.com/'
-    };
-
-    try {
-      if (navigator.share) {
-        await navigator.share(shareData);
-        return;
+  document.querySelectorAll("[data-share]").forEach((button) => {
+    const original = button.textContent.trim();
+    button.addEventListener("click", async () => {
+      try {
+        if (navigator.share) {
+          await navigator.share({ title: "TapThat Studio", text: "Make your first impression impossible to forget.", url: window.location.href });
+          return;
+        }
+        await navigator.clipboard.writeText(window.location.href);
+        button.textContent = "Link copied";
+        window.setTimeout(() => { button.textContent = original; }, 1800);
+      } catch (error) {
+        if (error?.name !== "AbortError") window.prompt("Copy this link:", window.location.href);
       }
-
-      if (navigator.clipboard) {
-        await navigator.clipboard.writeText(shareData.url);
-        setCopiedState(button, originalText);
-      }
-    } catch (error) {
-      console.warn('Share cancelled or failed:', error);
-    }
+    });
   });
-});
-
-if ('IntersectionObserver' in window) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      });
-    },
-    { threshold: 0.12 }
-  );
-
-  revealItems.forEach((item) => observer.observe(item));
-} else {
-  revealItems.forEach((item) => item.classList.add('visible'));
-}
+})();
