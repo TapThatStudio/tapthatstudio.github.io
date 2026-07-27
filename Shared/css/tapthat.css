@@ -859,7 +859,7 @@ h3 {
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 590px;
+  min-height: 640px;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 20px;
@@ -877,7 +877,7 @@ h3 {
 .work-card::before {
   position: absolute;
   inset: 0 0 auto;
-  height: 390px;
+  height: 430px;
   content: "";
 }
 
@@ -897,10 +897,10 @@ h3 {
   );
 }
 
-.work-realestate::before {
+.work-edventure::before {
   background: radial-gradient(
     circle at 50% 38%,
-    rgba(65, 98, 114, 0.42),
+    rgba(47, 149, 143, 0.35),
     transparent 17rem
   );
 }
@@ -918,68 +918,48 @@ h3 {
   text-transform: uppercase;
 }
 
-.work-preview {
+.work-screenshot {
   position: relative;
   z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 178px;
-  height: 326px;
+  width: min(74%, 250px);
+  height: 390px;
   margin: 56px auto 0;
-  padding: 44px 15px 15px;
   border: 4px solid #373126;
-  border-radius: 31px;
-  color: #2b231a;
-  background: #eee4d7;
+  overflow: hidden;
+  border-radius: 30px;
+  background: #151412;
   box-shadow: 0 24px 55px rgba(0, 0, 0, 0.45);
-  transform: rotate(1.5deg);
+  transform: rotate(1deg);
   transition: transform 0.3s ease;
 }
 
-.work-card:hover .work-preview {
-  transform: translateY(-6px) rotate(-1deg);
+.work-card:hover .work-screenshot {
+  transform: translateY(-6px) rotate(-0.5deg);
 }
 
-.work-preview::before {
+.work-screenshot::before {
   position: absolute;
-  top: 10px;
+  top: 9px;
   left: 50%;
-  width: 58px;
-  height: 14px;
-  border-radius: 8px;
+  z-index: 2;
+  width: 64px;
+  height: 16px;
+  border-radius: 999px;
   background: var(--black);
   content: "";
   transform: translateX(-50%);
 }
 
-.preview-mark {
-  display: grid;
-  place-items: center;
-  width: 58px;
-  height: 58px;
-  margin-bottom: 14px;
-  border: 1px solid #b28d51;
-  border-radius: 50%;
-  font-family: var(--display);
-  font-size: 1.7rem;
-}
-
-.work-preview strong {
-  max-width: 135px;
-  margin-bottom: 18px;
-  overflow: hidden;
-  font-size: 0.61rem;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.work-preview i {
+.work-screenshot img {
   width: 100%;
-  height: 39px;
-  margin-bottom: 7px;
-  border: 1px solid rgba(43, 35, 26, 0.13);
-  background: rgba(255, 255, 255, 0.58);
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.45s ease;
+}
+
+.work-card:hover .work-screenshot img {
+  transform: scale(1.025);
 }
 
 .work-copy {
@@ -1000,7 +980,7 @@ h3 {
 .work-copy p {
   margin-bottom: 22px;
   color: var(--muted);
-  font-size: 0.81rem;
+  font-size: 0.94rem;
   line-height: 1.7;
 }
 
@@ -1010,7 +990,7 @@ h3 {
   padding-top: 16px;
   border-top: 1px solid var(--line);
   color: var(--cream);
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   font-weight: 500;
 }
 
@@ -1399,13 +1379,13 @@ h3 {
     min-height: 510px;
   }
 
-  .work-preview {
+  .work-screenshot {
     margin-left: 65%;
-    transform: translateX(-50%) rotate(1.5deg);
+    transform: translateX(-50%) rotate(1deg);
   }
 
-  .work-card:hover .work-preview {
-    transform: translateX(-50%) translateY(-6px) rotate(-1deg);
+  .work-card:hover .work-screenshot {
+    transform: translateX(-50%) translateY(-6px) rotate(-0.5deg);
   }
 
   .work-copy {
@@ -1651,14 +1631,14 @@ h3 {
     min-height: 565px;
   }
 
-  .work-preview {
+  .work-screenshot {
     margin-left: auto;
     margin-right: auto;
-    transform: rotate(1.5deg);
+    transform: rotate(1deg);
   }
 
-  .work-card:hover .work-preview {
-    transform: translateY(-6px) rotate(-1deg);
+  .work-card:hover .work-screenshot {
+    transform: translateY(-6px) rotate(-0.5deg);
   }
 
   .work-copy {
