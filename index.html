@@ -1,419 +1,531 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="TapThat Studio creates premium NFC cards and custom tap experiences that pull the most important parts of your business into one clean, mobile-first page."
-  />
-  <meta name="theme-color" content="#101014" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="TapThat Studio creates premium NFC cards and custom mobile tap experiences for individuals, teams, and multi-location businesses."
+    />
+    <meta name="theme-color" content="#070706" />
 
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="TapThat Studio | Custom Tap Experiences" />
-  <meta
-    property="og:description"
-    content="Premium NFC cards and custom tap pages that help people save, book, browse, follow, share, or inquire the moment they meet you."
-  />
-  <meta property="og:url" content="https://tapthatstudio.com/" />
-  <meta property="og:image" content="https://tapthatstudio.com/Shared/images/tapthat-og.png" />
-  <meta property="og:image:alt" content="TapThat Studio custom tap experience preview" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="TapThat Studio" />
+    <meta
+      property="og:title"
+      content="TapThat Studio | Make Your First Impression Impossible to Forget"
+    />
+    <meta
+      property="og:description"
+      content="Premium NFC cards and custom tap experiences—from one unforgettable introduction to hundreds of perfectly branded team profiles."
+    />
+    <meta property="og:url" content="https://tapthatstudio.com/" />
+    <meta
+      property="og:image"
+      content="https://tapthatstudio.com/Shared/images/tapthat-hero-product.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="A TapThat Studio NFC card beside a custom mobile tap experience"
+    />
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="TapThat Studio | Custom Tap Experiences" />
-  <meta
-    name="twitter:description"
-    content="Premium NFC cards and custom tap pages that make your business easier to remember, share, and act on."
-  />
-  <meta name="twitter:image" content="https://tapthatstudio.com/Shared/images/tapthat-og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TapThat Studio" />
+    <meta
+      name="twitter:description"
+      content="Make your first impression impossible to forget."
+    />
+    <meta
+      name="twitter:image"
+      content="https://tapthatstudio.com/Shared/images/tapthat-hero-product.png"
+    />
 
-  <title>TapThat Studio | NFC Cards & Custom Tap Experiences</title>
+    <title>
+      TapThat Studio | Premium NFC Cards &amp; Custom Tap Experiences
+    </title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="Shared/css/tapthat.css" />
-</head>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,500;1,500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="Shared/css/tapthat.css" />
+    <script src="Shared/scripts/script.js" defer></script>
+  </head>
 
-<body>
-  <header class="site-header" data-header>
-    <a class="brand" href="#top" aria-label="TapThat Studio home">
-      <span class="brand-mark">T</span>
-      <span>TapThat Studio</span>
-    </a>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <button
-      class="nav-toggle"
-      type="button"
-      aria-label="Open navigation"
-      aria-expanded="false"
-      data-nav-toggle
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="TapThat Studio home">
+        TAPTHAT <span>/</span> STUDIO
+      </a>
 
-    <nav class="site-nav" data-nav aria-label="Primary navigation">
-      <a href="#proofs">Proofs</a>
-      <a href="#experience">Tap experiences</a>
-      <a href="#everything">One tap away</a>
-      <a href="#teams">For teams</a>
-      <a href="#packages">Packages</a>
-      <button class="nav-share" type="button" data-share aria-label="Share TapThat Studio">
-        <span aria-hidden="true">↗</span>
-        Share
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        data-menu-toggle
+      >
+        <span></span>
+        <span></span>
       </button>
-      <a href="#contact" class="nav-cta">Start a project</a>
-    </nav>
-  </header>
 
-  <main id="top">
-    <section class="hero section-pad">
-      <div class="hero-glow hero-glow-one"></div>
-      <div class="hero-glow hero-glow-two"></div>
+      <nav
+        class="site-nav"
+        id="site-nav"
+        aria-label="Primary navigation"
+        data-nav
+      >
+        <a href="#work">Our work</a>
+        <a href="#difference">Why TapThat</a>
+        <a href="#teams">For teams</a>
+        <a class="nav-cta" href="#contact"
+          >Let’s make yours <span aria-hidden="true">↓</span></a
+        >
+      </nav>
+    </header>
 
-      <div class="hero-content reveal">
-        <p class="eyebrow">NFC cards · QR codes · Custom tap experiences</p>
+    <main id="main">
+      <section class="hero shell" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow">A better way to introduce yourself</p>
+          <h1>Make your first <em>impression</em> impossible to forget.</h1>
+          <p class="hero-lede">
+            We pair a beautifully made NFC card with a mobile experience built
+            around your business—so the right next step is always one tap away.
+          </p>
 
-        <h1>Tap. Impress. Get remembered.</h1>
-
-        <p class="hero-copy">
-          TapThat Studio creates premium NFC cards and custom tap pages that pull the most important parts of your business into one clean, mobile-first experience — so people can save, book, browse, follow, share, or inquire the moment they meet you.
-        </p>
-
-        <div class="hero-actions">
-          <a class="button primary" href="#contact">Create a proof of concept</a>
-          <a class="button ghost" href="#proofs">View examples</a>
-          <button class="button ghost share-button" type="button" data-share>
-            <span aria-hidden="true">↗</span>
-            Share TapThat
-          </button>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#work">
+              See what a tap can do <span aria-hidden="true">↓</span>
+            </a>
+            <a class="button button-secondary" href="#contact">
+              Let’s make yours <span aria-hidden="true">↓</span>
+            </a>
+          </div>
         </div>
 
-        <div class="trust-row" aria-label="Key benefits">
-          <span>No app required</span>
-          <span>Built to share</span>
-          <span>iPhone + Android friendly</span>
-          <span>White-glove setup</span>
+        <div class="hero-art" aria-hidden="true">
+          <span class="tap-ring tap-ring-one"></span>
+          <span class="tap-ring tap-ring-two"></span>
+          <img
+            src="Shared/images/tapthat-hero-product.webp"
+            alt=""
+            width="1341"
+            height="1173"
+          />
         </div>
-      </div>
 
-      <div class="hero-card reveal" aria-label="Sample TapThat landing card">
-        <div class="phone-shell">
-          <div class="phone-top"></div>
+        <ul class="hero-facts" aria-label="TapThat Studio essentials">
+          <li><span>01</span>No app required</li>
+          <li><span>02</span>Works with iPhone + Android</li>
+          <li><span>03</span>Designed and managed for you</li>
+        </ul>
+      </section>
 
-          <div class="profile-card">
-            <p class="mini-eyebrow">Live tap preview</p>
-            <div class="avatar">DH</div>
-            <p class="mini-eyebrow">Desert Homes Realty</p>
-            <h2>Dana Hart</h2>
-            <p>Realtor · Phoenix Metro</p>
+      <section class="big-idea shell section">
+        <p class="eyebrow">The card gets the tap</p>
+        <div>
+          <h2>The tap is just the beginning.</h2>
+          <p>
+            Putting a link on an NFC card is easy. The fun part is deciding what
+            should happen after the tap. We build that part around your
+            business, your personality, and what you want people to do next.
+          </p>
+        </div>
+      </section>
 
-            <div class="card-buttons">
-              <span>Save Contact</span>
-              <span>View Listings</span>
-              <span>Schedule Tour</span>
-              <span>Share Profile</span>
+      <section class="work section" id="work">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">See what a tap can do</p>
+              <h2>Real businesses.<br />Built for the next move.</h2>
+            </div>
+            <p>
+              No generic templates here. These are three real Tap Experiences,
+              each designed to feel like the business behind it. Take a look.
+            </p>
+          </div>
+
+          <div class="work-grid">
+            <a
+              class="work-card work-salon"
+              href="/tap/SnapDragonSalon"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="work-type">Salon system</span>
+              <div class="work-screenshot">
+                <img
+                  src="Shared/images/snapdragon-demo.webp"
+                  alt="Snapdragon Salon Tap Experience featuring Kandy Russell"
+                  width="990"
+                  height="1616"
+                  loading="lazy"
+                />
+              </div>
+              <div class="work-copy">
+                <h3>Snapdragon Salon</h3>
+                <p>
+                  A warm, editorial introduction to Kandy, with booking always
+                  close at hand.
+                </p>
+                <span
+                  >Visit the live experience <b aria-hidden="true">↗</b></span
+                >
+              </div>
+            </a>
+
+            <a
+              class="work-card work-print"
+              href="/tap/MinuteManPress"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="work-type">Local business</span>
+              <div class="work-screenshot">
+                <img
+                  src="Shared/images/minuteman-demo.webp"
+                  alt="Minuteman Press Tap Experience featuring Josh Gardner"
+                  width="990"
+                  height="1616"
+                  loading="lazy"
+                />
+              </div>
+              <div class="work-copy">
+                <h3>Minuteman Press</h3>
+                <p>
+                  Josh’s print shop, services, quotes, and file uploads—all
+                  gathered into one useful next step.
+                </p>
+                <span
+                  >Visit the live experience <b aria-hidden="true">↗</b></span
+                >
+              </div>
+            </a>
+
+            <a
+              class="work-card work-edventure"
+              href="/tap/EdVenture"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="work-type">Lake adventure</span>
+              <div class="work-screenshot">
+                <img
+                  src="Shared/images/edventure-demo.webp"
+                  alt="EDventure Tap Experience for Lake Pleasant adventures"
+                  width="990"
+                  height="1616"
+                  loading="lazy"
+                />
+              </div>
+              <div class="work-copy">
+                <h3>EDventure</h3>
+                <p>
+                  Big energy, clear booking, and everything guests need before
+                  a day on Lake Pleasant.
+                </p>
+                <span
+                  >Visit the live experience <b aria-hidden="true">↗</b></span
+                >
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="difference section" id="difference">
+        <div class="shell difference-layout">
+          <div class="sticky-heading">
+            <p class="eyebrow">Not another digital business card</p>
+            <h2>Built around your business. Not squeezed into a template.</h2>
+          </div>
+
+          <div class="difference-list">
+            <article>
+              <span class="number">01</span>
+              <div>
+                <h3>Curated, not cluttered</h3>
+                <p>
+                  We organize the most useful parts of your business into one
+                  focused mobile experience.
+                </p>
+              </div>
+            </article>
+            <article>
+              <span class="number">02</span>
+              <div>
+                <h3>Designed to feel like you</h3>
+                <p>
+                  Your colors, voice, goals, services, and personality—not a
+                  generic theme with your logo pasted on.
+                </p>
+              </div>
+            </article>
+            <article>
+              <span class="number">03</span>
+              <div>
+                <h3>Useful long after hello</h3>
+                <p>
+                  Change booking, offers, photos, links, and featured work
+                  without replacing the card.
+                </p>
+              </div>
+            </article>
+            <article>
+              <span class="number">04</span>
+              <div>
+                <h3>A human handles the details</h3>
+                <p>
+                  Strategy, copy, design, setup, QR backup, testing, and launch
+                  are handled with care.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="teams section" id="teams">
+        <div class="shell">
+          <div class="teams-heading">
+            <div>
+              <p class="eyebrow">TapThat for teams</p>
+              <h2>
+                Your company. Your people.<br /><em
+                  >One perfectly branded system.</em
+                >
+              </h2>
+            </div>
+            <div class="teams-intro">
+              <p>
+                Whether it is one professional, an entire team, or every
+                location, each Tap Experience follows your brand while adapting
+                to the person, role, place, and next action.
+              </p>
+              <a class="text-link" href="#contact"
+                >Plan a team rollout <span aria-hidden="true">↓</span></a
+              >
+            </div>
+          </div>
+
+          <div
+            class="team-demo"
+            aria-label="Example centrally managed property management team"
+          >
+            <div class="demo-topbar">
+              <div><span class="status-dot"></span> Company system</div>
+              <strong>Apex Property Group</strong>
+              <span>500 people</span>
             </div>
 
-            <div class="listing-preview">
-              <div></div>
-              <div>
-                <strong>Featured listing</strong>
-                <small>Arcadia · 3 bed · Modern desert charm</small>
+            <div class="demo-content">
+              <div class="demo-message">
+                <span class="number">One managed roster</span>
+                <h3>Change it once.<br />Keep everyone current.</h3>
+                <p>
+                  Company-wide branding and shared content stay consistent while
+                  each person keeps their own role, contact details, location,
+                  and calls to action.
+                </p>
+              </div>
+
+              <div class="people-list">
+                <div class="person-row">
+                  <span class="avatar">MC</span>
+                  <div>
+                    <strong>Maya Chen</strong
+                    ><small>Regional Property Manager · Phoenix</small>
+                  </div>
+                  <span class="live-status">Live</span>
+                </div>
+                <div class="person-row">
+                  <span class="avatar">JR</span>
+                  <div>
+                    <strong>Jordan Reyes</strong
+                    ><small>Community Director · Scottsdale</small>
+                  </div>
+                  <span class="live-status">Live</span>
+                </div>
+                <div class="person-row">
+                  <span class="avatar">AT</span>
+                  <div>
+                    <strong>Amelia Torres</strong
+                    ><small>Business Development · Arizona</small>
+                  </div>
+                  <span class="live-status">Live</span>
+                </div>
               </div>
             </div>
           </div>
+
+          <div class="team-benefits">
+            <article>
+              <span class="number">01</span>
+              <h3>Always on-brand</h3>
+              <p>
+                Approved colors, typography, messaging, links, and standards
+                across every profile.
+              </p>
+            </article>
+            <article>
+              <span class="number">02</span>
+              <h3>Personal where it matters</h3>
+              <p>
+                Names, roles, locations, contact details, calendars, and actions
+                stay individual.
+              </p>
+            </article>
+            <article>
+              <span class="number">03</span>
+              <h3>Easy to keep current</h3>
+              <p>
+                Add people, change roles, update links, and remove former
+                employees without reprinting cards.
+              </p>
+            </article>
+            <article>
+              <span class="number">04</span>
+              <h3>Built for rollout</h3>
+              <p>
+                Roster intake, design, card production, quality checks, launch,
+                and updates—coordinated.
+              </p>
+            </article>
+          </div>
+
+          <p class="ideal-for">
+            <strong>Ideal for</strong>
+            property management · brokerages · franchises · field sales ·
+            professional services · multi-location businesses
+          </p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="proofs" class="section section-pad">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Proofs of concept</p>
-        <h2>Real examples, not imaginary templates.</h2>
-        <p>
-          These proof pages show how one idea can flex across different businesses while still feeling custom, premium, and useful the moment someone opens it.
-        </p>
-      </div>
-
-      <div class="feature-grid">
-        <article class="feature-card reveal">
-          <span class="icon">✦</span>
-          <h3>Snapdragon Salon</h3>
-          <p>
-            A polished stylist tap experience for a premium salon, designed around booking, trust, brand consistency, and personal connection.
-          </p>
-          <a class="button ghost full" href="/SnapDragonSalon/">See the salon demo</a>
-        </article>
-
-        <article class="feature-card reveal">
-          <span class="icon">⌁</span>
-          <h3>Minuteman Press</h3>
-          <p>
-            A focused local business page for print, signage, customer follow-up, quick contact, and making the next step obvious.
-          </p>
-          <a class="button ghost full" href="/MinuteManPress/">See the print shop demo</a>
-        </article>
-
-        <article class="feature-card reveal">
-          <span class="icon">↗</span>
-          <h3>Real Estate Digital Card</h3>
-          <p>
-            A clean, referral-friendly experience for agents who want to share contact info, listings, calls-to-action, and credibility fast.
-          </p>
-          <a class="button ghost full" href="/ShellyBerry/">See the realtor demo</a>
-        </article>
-      </div>
-    </section>
-
-    <section id="experience" class="section section-pad">
-      <div class="section-heading reveal">
-        <p class="eyebrow">What we make</p>
-        <h2>Custom tap experiences for businesses that want to look sharp.</h2>
-        <p>
-          A TapThat experience is not just a web page. It is a curated, mobile-first introduction that makes your business easier to understand, easier to remember, and easier to act on.
-        </p>
-      </div>
-
-      <div class="feature-grid">
-        <article class="feature-card reveal">
-          <span class="icon">✦</span>
-          <h3>NFC business cards</h3>
-          <p>
-            Tap-ready cards that open your custom experience instantly, without asking people to type, search, or remember your details later.
-          </p>
-        </article>
-
-        <article class="feature-card reveal">
-          <span class="icon">⌁</span>
-          <h3>Custom Tap Pages</h3>
-          <p>
-            A polished page built around the most important parts of your business: booking, services, offers, reviews, menus, listings, photos, socials, and contact options.
-          </p>
-        </article>
-
-        <article class="feature-card reveal">
-          <span class="icon">↻</span>
-          <h3>Update without reprinting</h3>
-          <p>
-            Change links, photos, specials, featured work, team info, or seasonal promos while the card in someone’s hand still works.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section id="everything" class="showcase section-pad">
-      <div class="showcase-copy reveal">
-        <p class="eyebrow">Everything important, one tap away</p>
-        <h2>We turn business clutter into a clear next step.</h2>
-        <p>
-          Most businesses already have the pieces: a website, booking link, Google profile, social pages, reviews, photos, forms, offers, and contact info. TapThat Studio pulls the most useful pieces into one clean experience so customers do not have to hunt.
-        </p>
-        <p>
-          The result is a white-glove digital introduction that makes you look polished, prepared, and easy to choose.
-        </p>
-      </div>
-
-      <div class="tap-list reveal" aria-label="Common tap page actions">
-        <span>Save contact</span>
-        <span>Book now</span>
-        <span>Call or text</span>
-        <span>Get directions</span>
-        <span>View services</span>
-        <span>Browse listings</span>
-        <span>See reviews</span>
-        <span>View menu</span>
-        <span>Follow socials</span>
-        <span>Share with a friend</span>
-        <span>Request a quote</span>
-        <span>Claim an offer</span>
-      </div>
-    </section>
-
-    <section id="why" class="split section-pad">
-      <div class="split-copy reveal">
-        <p class="eyebrow">Why it works</p>
-
-        <h2>People forget paper. They remember an easy experience.</h2>
-
-        <p>
-          A traditional card often disappears into a drawer. A TapThat page gives people a reason to act right away — and a clean way to come back later.
-        </p>
-
-        <ul class="check-list">
-          <li>Designed to look premium on a phone</li>
-          <li>Built around your goals, not a generic template</li>
-          <li>Great for salons, real estate agents, print shops, restaurants, service businesses, consultants, creators, and events</li>
-          <li>Share-ready by default, with clean previews and simple calls to action</li>
-          <li>White-glove setup that helps you look good from the first tap</li>
-        </ul>
-      </div>
-
-      <div class="stats-panel reveal">
-        <div>
-          <strong>01</strong>
-          <span>Tap or scan</span>
+      <section class="materials shell section">
+        <div class="materials-image">
+          <img
+            src="Shared/images/tapthat-materials.webp"
+            alt="Premium NFC cards in brushed metal, dark walnut, and warm ivory finishes"
+            width="1536"
+            height="1024"
+            loading="lazy"
+          />
+          <span>Metal · Wood · Premium PVC</span>
         </div>
 
-        <div>
-          <strong>02</strong>
-          <span>Open the experience</span>
-        </div>
-
-        <div>
-          <strong>03</strong>
-          <span>Save, book, follow, browse, share, or inquire</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="teams" class="section section-pad">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Built for solo pros or full teams</p>
-
-        <h2>One polished brand system, many personal introductions.</h2>
-
-        <p>
-          TapThat Studio can create a consistent tap experience system for businesses with multiple people, services, locations, or campaigns. Each page can feel personal while still elevating the company brand.
-        </p>
-      </div>
-
-      <div class="feature-grid">
-        <article class="feature-card reveal">
-          <span class="icon">✂</span>
-          <h3>Salons and stylists</h3>
+        <div class="materials-copy">
+          <p class="eyebrow">Made to be handed over</p>
+          <h2>Made to feel as good<br /><em>as it works.</em></h2>
           <p>
-            Give every stylist their own page with booking links, specialties, photos, socials, and contact options — all under one cohesive salon look.
+            Choose a card that fits how you show up—from polished metal and warm
+            wood to durable everyday options. Add custom engraving, print, and a
+            discreet QR backup.
           </p>
-        </article>
-
-        <article class="feature-card reveal">
-          <span class="icon">▣</span>
-          <h3>Local businesses</h3>
-          <p>
-            Create focused pages for services, sales reps, promos, customer follow-up, QR campaigns, or high-value client introductions.
-          </p>
-        </article>
-
-        <article class="feature-card reveal">
-          <span class="icon">◆</span>
-          <h3>Easy to scale</h3>
-          <p>
-            Once the core design is dialed in, additional team pages can follow the same structure with less duplication and a cleaner update path.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section id="packages" class="section section-pad">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Starter packages</p>
-
-        <h2>Start with one great tap. Grow into a full system.</h2>
-
-        <p>
-          Choose a simple starting point, then shape it around the business. Every TapThat experience is built to be mobile-first, easy to act on, and polished enough to send to real clients.
-        </p>
-      </div>
-
-      <div class="pricing-grid">
-        <article class="price-card reveal">
-          <p class="package-label">Essential</p>
-          <h3>Essential Tap Page</h3>
-          <p class="price">Custom quote</p>
-
           <ul>
-            <li>One polished mobile tap page</li>
-            <li>Contact, socials, and primary call-to-action links</li>
-            <li>NFC card and QR code setup guidance</li>
+            <li>
+              <span class="number">01</span>One card. Unlimited introductions.
+            </li>
+            <li>
+              <span class="number">02</span>Tap or scan. No app. No friction.
+            </li>
+            <li>
+              <span class="number">03</span>Your experience can evolve over
+              time.
+            </li>
           </ul>
+        </div>
+      </section>
 
-          <a href="#contact" class="button ghost full">Ask about Essential</a>
-        </article>
+      <section class="process section">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">From idea to first tap</p>
+              <h2>You bring the business.<br />We’ll shape the experience.</h2>
+            </div>
+            <p>
+              You do not need a perfect plan. Figuring out what the tap should
+              accomplish is part of the process.
+            </p>
+          </div>
 
-        <article class="price-card featured reveal">
-          <p class="package-label">Most useful</p>
-          <h3>Professional Tap Experience</h3>
-          <p class="price">Custom quote</p>
+          <div class="process-grid">
+            <article>
+              <span class="number">01</span>
+              <h3>Find the goal</h3>
+              <p>
+                Booking, quotes, reviews, referrals, introductions—or something
+                entirely your own.
+              </p>
+            </article>
+            <article>
+              <span class="number">02</span>
+              <h3>Build the experience</h3>
+              <p>
+                Strategy, structure, copy, visual design, card setup, QR backup,
+                and testing.
+              </p>
+            </article>
+            <article>
+              <span class="number">03</span>
+              <h3>Make the introduction</h3>
+              <p>
+                Tap their phone and let the experience do what a paper card
+                never could.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-          <ul>
-            <li>Expanded experience with sections for services, listings, booking, reviews, offers, menus, or portfolio work</li>
-            <li>Downloadable contact card option</li>
-            <li>Photo, link, and copy polish</li>
-            <li>Launch-ready hosting setup</li>
-          </ul>
+      <section class="contact shell section" id="contact">
+        <div class="contact-card">
+          <p class="eyebrow">Ready when you are</p>
+          <h2>
+            Let’s make them say,<br /><em>“Wait—how did you do that?”</em>
+          </h2>
+          <p>
+            Tell Will a little about your business and what you’d love the tap
+            to accomplish. It doesn’t need to be perfectly figured out—we’ll
+            shape it together.
+          </p>
+          <div class="contact-actions">
+            <a
+              class="button button-primary"
+              href="mailto:info@tapthatstudio.com?subject=Attn%3A%20Will%20%E2%80%94%20Let%27s%20make%20a%20Tap%20Experience&amp;body=Hi%20Will%2C%0A%0AI%27m%20interested%20in%20creating%20a%20Tap%20Experience.%0A%0AHere%27s%20a%20little%20about%20my%20business%3A%0A%0AHere%27s%20what%20I%27d%20love%20people%20to%20do%20after%20the%20tap%3A%0A%0AThe%20best%20way%20to%20reach%20me%3A%0A%0AThanks%2C%0A"
+            >
+              Tell Will what you have in mind <span aria-hidden="true">↗</span>
+            </a>
+            <a
+              class="email-link"
+              href="mailto:info@tapthatstudio.com?subject=Attn%3A%20Will%20%E2%80%94%20TapThat%20Studio%20inquiry&amp;body=Hi%20Will%2C%0A%0A"
+              >Or send Will a quick note</a
+            >
+          </div>
+          <div class="contact-meta">
+            <span>Phoenix, Arizona</span
+            ><span>Built for businesses everywhere</span>
+          </div>
+        </div>
+      </section>
+    </main>
 
-          <a href="#contact" class="button primary full">Start here</a>
-        </article>
-
-        <article class="price-card reveal">
-          <p class="package-label">Teams</p>
-          <h3>Team / Brand System</h3>
-          <p class="price">Custom quote</p>
-
-          <ul>
-            <li>Multiple connected pages for people, services, campaigns, or locations</li>
-            <li>Consistent design system across every page</li>
-            <li>Ongoing content update options</li>
-          </ul>
-
-          <a href="#contact" class="button ghost full">Ask about Teams</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="cta-band section-pad reveal">
+    <footer class="site-footer shell">
+      <a class="wordmark" href="#top">TAPTHAT <span>/</span> STUDIO</a>
+      <p>Best first impressions in the business.</p>
       <div>
-        <p class="eyebrow">For professionals who hate forgettable marketing</p>
-        <h2>Make your next introduction ridiculously easy to act on.</h2>
+        <button type="button" data-share>Share TapThat</button>
+        <a href="#top">Back to top ↑</a>
       </div>
-
-      <div class="cta-actions">
-        <a class="button primary" href="#contact">Create my TapThat page</a>
-        <button class="button ghost share-button" type="button" data-share>
-          <span aria-hidden="true">↗</span>
-          Share this idea
-        </button>
-      </div>
-    </section>
-
-    <section id="contact" class="contact section-pad">
-      <div class="contact-card reveal">
-        <p class="eyebrow">Start a project</p>
-
-        <h2>Tell me what you want your card, QR code, or tap experience to make happen.</h2>
-
-        <p>
-          Need a polished digital card for yourself, a client-specific tap page, or a proof of concept for your business? Send your profession, website, key links, and the main action you want people to take.
-        </p>
-
-        <div class="contact-actions">
-          <a
-            class="button primary"
-            href="mailto:simplywill@gmail.com?subject=TapThat%20Studio%20Project%20Inquiry"
-          >
-            Email TapThat Studio
-          </a>
-
-          <button class="button ghost share-button" type="button" data-share>
-            <span aria-hidden="true">↗</span>
-            Share TapThat Studio
-          </button>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p>© <span data-year></span> TapThat Studio. Digital first impressions, handled with class.</p>
-    <a href="#top">Back to top</a>
-  </footer>
-
-  <script src="Shared/scripts/script.js"></script>
-</body>
+      <small>© 2026 TapThat Studio LLC</small>
+    </footer>
+  </body>
 </html>
