@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07150f">
+  <meta name="color-scheme" content="dark">
+
+  <title>Scott Smith — One Tap Away</title>
+  <meta name="description" content="Scott Smith. Now conveniently available in your phone.">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Scott Smith — One Tap Away">
+  <meta property="og:description" content="Congratulations. Your contact list just got better.">
+  <meta property="og:site_name" content="Scott Smith">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Scott Smith — One Tap Away">
+  <meta name="twitter:description" content="Congratulations. Your contact list just got better.">
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <span class="orb orb-one"></span>
+    <span class="orb orb-two"></span>
+    <span class="orb orb-three"></span>
+    <span class="noise"></span>
+  </div>
+
+  <main class="page-shell">
+    <section class="experience" aria-label="Scott Smith contact card">
+      <header class="topbar">
+        <a class="mini-brand" href="#top" aria-label="Scott Smith home">
+          <span class="mini-dot"></span>
+          <span>SCOTT.SMITH</span>
+        </a>
+
+        <button class="icon-button glass-control" id="shareButton" type="button" aria-label="Share Scott's page">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 16V3m0 0 4 4m-4-4-4 4M5.5 10.5v7A2.5 2.5 0 0 0 8 20h8a2.5 2.5 0 0 0 2.5-2.5v-7"/>
+          </svg>
+        </button>
+      </header>
+
+      <article class="hero-card glass-panel" id="top">
+        <div class="specular" aria-hidden="true"></div>
+
+        <div class="party-pill">
+          <span class="pulse-dot"></span>
+          PARTY MODE
+        </div>
+
+        <div class="avatar-wrap" aria-hidden="true">
+          <div class="avatar-liquid"></div>
+          <div class="avatar">SS</div>
+        </div>
+
+        <div class="identity">
+          <p class="eyebrow">The one and only</p>
+          <h1>Scott Smith</h1>
+          <a class="phone-link" href="tel:+16023739455">602-373-9455</a>
+        </div>
+
+        <button class="tagline-card" id="taglineButton" type="button" aria-label="Show another Scott tagline">
+          <span class="spark" aria-hidden="true">✦</span>
+          <span id="tagline" aria-live="polite">Congratulations. Your phone book just got 10x cooler.</span>
+          <span class="refresh-hint">tap for another</span>
+        </button>
+
+        <div class="actions">
+          <a class="action primary" href="Scott-Smith.vcf">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3v11m0 0 4-4m-4 4-4-4M5 15v2.5A2.5 2.5 0 0 0 7.5 20h9a2.5 2.5 0 0 0 2.5-2.5V15"/>
+            </svg>
+            <span>Save Scott</span>
+          </a>
+
+          <a class="action secondary" href="sms:+16023739455">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5.5 18.5 4 21l4-1.2a8.4 8.4 0 1 0-2.5-1.3Z"/>
+              <path d="M8.25 12h.01M12 12h.01M15.75 12h.01"/>
+            </svg>
+            <span>Text Scott</span>
+          </a>
+        </div>
+      </article>
+
+      <footer class="social-dock glass-panel" aria-label="Scott's social links">
+        <a class="social-link" href="https://www.instagram.com/scotemusprime" target="_blank" rel="noopener noreferrer" aria-label="Scott on Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3.5" y="3.5" width="17" height="17" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle class="fill-dot" cx="17.4" cy="6.8" r="1"/>
+          </svg>
+          <span>Instagram</span>
+        </a>
+
+        <span class="dock-divider" aria-hidden="true"></span>
+
+        <a class="social-link" href="https://www.facebook.com/scott.smith.530870" target="_blank" rel="noopener noreferrer" aria-label="Scott on Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M14.5 8H17V4.3c-.5-.1-1.9-.3-3.5-.3C10.2 4 8 6 8 9.6V12H5v4h3v8h4.2v-8h3.5l.6-4h-4.1V10c0-1.2.3-2 2.3-2Z"/>
+          </svg>
+          <span>Facebook</span>
+        </a>
+
+        <span class="dock-divider" aria-hidden="true"></span>
+
+        <a class="social-link" href="https://www.modernmassageandchiro.com/" target="_blank" rel="noopener noreferrer" aria-label="Scott's website">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="8.5"/>
+            <path d="M3.8 12h16.4M12 3.5c2.3 2.4 3.6 5.3 3.6 8.5s-1.3 6.1-3.6 8.5c-2.3-2.4-3.6-5.3-3.6-8.5S9.7 5.9 12 3.5Z"/>
+          </svg>
+          <span>Website</span>
+        </a>
+      </footer>
+
+      <p class="tiny-credit">Tap. Save. Regret nothing.</p>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Link copied</div>
+</body>
+</html>
