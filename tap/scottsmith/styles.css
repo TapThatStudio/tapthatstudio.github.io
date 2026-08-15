@@ -499,28 +499,29 @@ h1 {
 }
 
 .studio-credit {
-  margin: 11px 0 2px;
+  margin: 14px 0 6px;
   text-align: center;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
 }
 
 .studio-credit a {
-  color: rgba(222, 247, 231, 0.42);
+  color: rgba(236, 255, 242, 0.62);
   text-decoration: none;
-  transition: color 180ms ease;
+  transition: color 180ms ease, opacity 180ms ease;
 }
 
 .studio-credit a:hover,
 .studio-credit a:focus-visible {
-  color: rgba(236, 255, 242, 0.78);
+  color: rgba(236, 255, 242, 0.9);
 }
 
 .studio-credit span {
   display: inline-block;
-  margin-left: 2px;
-  color: rgba(134, 247, 173, 0.58);
+  margin-left: 3px;
+  color: rgba(134, 247, 173, 0.8);
 }
 
 .toast {
