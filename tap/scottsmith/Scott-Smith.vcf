@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Smith;Scott;;;
+FN:Scott Smith
+NICKNAME:Scooter
+TEL;TYPE=CELL,VOICE,PREF:+16023008734
+URL:https://www.modernmassageandchiro.com/
+item1.URL:https://www.instagram.com/scotemusprime
+item1.X-ABLabel:Instagram
+item2.URL:https://www.facebook.com/scott.smith.530870
+item2.X-ABLabel:Facebook
+REV:20260815T042400Z
+END:VCARD
