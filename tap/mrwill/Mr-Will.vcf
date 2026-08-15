@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Will;Mr;;;
+FN:Mr Will
+NICKNAME:Mr Will
+TEL;TYPE=CELL,VOICE,PREF:+16023739455
+URL:https://tapthatstudio.com
+item1.URL:https://www.instagram.com/simplywill
+item1.X-ABLabel:Instagram
+item2.URL:https://www.facebook.com/simplywill
+item2.X-ABLabel:Facebook
+REV:20260815T033900Z
+END:VCARD
