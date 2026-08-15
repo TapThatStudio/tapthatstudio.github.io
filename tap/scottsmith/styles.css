@@ -264,7 +264,7 @@
   }
   
   .avatar-liquid,
-  .avatar {
+  .avatar-photo {
     position: absolute;
     inset: 0;
     border-radius: 32px;
@@ -281,14 +281,16 @@
     animation: liquidFloat 6s ease-in-out infinite alternate;
   }
   
-  .avatar {
-    display: grid;
-    place-items: center;
-    color: #ecfff2;
-    font-size: 29px;
-    font-weight: 740;
-    letter-spacing: -0.04em;
-    text-shadow: 0 2px 18px rgba(0, 41, 17, 0.28);
+  .avatar-photo {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.35),
+      0 10px 28px rgba(0, 0, 0, 0.22);
   }
   
   .identity {
@@ -505,6 +507,23 @@
     letter-spacing: 0.045em;
   }
   
+  .studio-credit {
+    margin: 7px 0 0;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 620;
+    letter-spacing: 0.035em;
+  }
+  
+  .studio-credit a {
+    color: rgba(222, 247, 231, 0.54);
+    text-decoration: none;
+  }
+  
+  .studio-credit a:hover {
+    color: rgba(236, 255, 242, 0.84);
+  }
+  
   .toast {
     position: fixed;
     z-index: 5;
@@ -574,7 +593,7 @@
       margin-bottom: 13px;
     }
   
-    .avatar,
+    .avatar-photo,
     .avatar-liquid {
       border-radius: 27px;
     }
