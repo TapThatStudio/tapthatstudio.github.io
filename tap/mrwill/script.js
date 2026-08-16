@@ -8,7 +8,9 @@ const taglines = [
   "I look great on your screen. Go ahead and hit save.",
   "You're welcome. Your contact list was looking a little boring.",
   "Achievement unlocked: You just acquired an elite texting partner.",
-  "Now you have my info. Try not to text me all at once."
+  "Now you have my info. Try not to text me all at once.",
+  "Congrats, you now know someone cool.",
+  "The contact you didn't know you needed."
 ];
 
 const taglineElement = document.querySelector("#tagline");
