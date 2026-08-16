@@ -10,6 +10,7 @@ const taglines = [
   "Achievement unlocked: You just acquired an elite texting partner.",
   "Now you have my info. Try not to text me all at once.",
   "Congrats, you now know someone cool.",
+  "You now have direct access to me. Use wisely.",
   "The contact you didn't know you needed."
 ];
 
