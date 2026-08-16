@@ -644,6 +644,10 @@ h1 {
   }
 }
 
+.party-pill[hidden] {
+  display: none !important; 
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

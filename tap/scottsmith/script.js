@@ -32,6 +32,8 @@ function randomTaglineIndex() {
 }
 
 function showTagline({ animate = true } = {}) {
+  if (!taglineElement) return;
+
   currentIndex = randomTaglineIndex();
 
   if (!animate) {
@@ -98,6 +100,24 @@ function updateGlassLight(event) {
   heroCard.style.setProperty("--mx", `${x}%`);
   heroCard.style.setProperty("--my", `${y}%`);
 }
+
+function updatePartyMode() {
+  const partyPill = document.querySelector(".party-pill");
+  if (!partyPill) return;
+
+  const now = new Date();
+  const day = now.getDay();   // 0 = Sunday, 5 = Friday, 6 = Saturday
+  const hour = now.getHours();
+
+  const isPartyTime =
+    day === 6 ||               // Saturday
+    day === 0 ||               // Sunday
+    (day === 5 && hour >= 17); // Friday after 5 PM
+
+  partyPill.hidden = !isPartyTime;
+}
+
+updatePartyMode();
 
 showTagline({ animate: false });
 taglineButton?.addEventListener("click", () => showTagline());
