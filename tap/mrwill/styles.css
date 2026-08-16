@@ -373,7 +373,9 @@ h1 {
   line-height: 1.28;
   font-weight: 640;
   letter-spacing: -0.015em;
-  text-wrap: pretty;
+  text-wrap: wrap;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 #tagline.swap {
