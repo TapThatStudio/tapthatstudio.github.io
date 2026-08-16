@@ -58,7 +58,7 @@ function showToast(message) {
 async function shareMrWill() {
   const shareData = {
     title: "Mr Will",
-    text: "You should probably have Mr Will in your phone.",
+    text: "Tap responsibly.",
     url: window.location.href
   };
 
