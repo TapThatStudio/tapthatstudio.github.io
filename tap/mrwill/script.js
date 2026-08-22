@@ -11,7 +11,18 @@ const taglines = [
   "Now you have my info. Try not to text me all at once.",
   "Congrats, you now know someone cool.",
   "You now have direct access to me. Use wisely.",
-  "The contact you didn't know you needed."
+  "The contact you didn't know you needed.",
+  "This may be the best decision you've made all day.",
+ "Save me. You'll want proof we met.",
+ "Your phone seems happier already.",
+ "I can't believe they just let anyone have my number.",
+ "Congratulations. You've reached the inner circle.",
+ "You tapped. I appeared. Technology is magnificent.",
+ "Well played. You found the good contact.",
+ "I'd save this one if I were you.",
+ "Go ahead. Make it official.",
+ "Look at you, networking with the right people.",
+ "Your contacts just gained a little street cred."
 ];
 
 const taglineElement = document.querySelector("#tagline");
