@@ -21,7 +21,7 @@
     ?.querySelectorAll("a")
     .forEach((link) => link.addEventListener("click", closeMenu));
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 820) closeMenu();
+    if (window.innerWidth > 800) closeMenu();
   });
 
   document.querySelectorAll("[data-share]").forEach((button) => {
