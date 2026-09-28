@@ -196,7 +196,8 @@
   }
   
   .bottom-bar {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto;
     align-items: center;
     justify-content: space-between;
     gap: 24px;
@@ -213,19 +214,73 @@
     color: var(--muted);
   }
   
-  nav {
+  /* Three-part social dock, matching the MrWill landing page. */
+  .social-dock {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr 1px 1fr;
+    align-items: stretch;
+    padding: 8px 6px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 23px;
+    background:
+      linear-gradient(140deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.045) 42%, rgba(255, 255, 255, 0.075)),
+      rgba(205, 231, 215, 0.08);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      0 18px 45px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(28px) saturate(145%);
+    -webkit-backdrop-filter: blur(28px) saturate(145%);
+  }
+  
+  .social-link {
+    min-height: 76px;
+    min-width: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 12px;
+    justify-content: center;
+    gap: 7px;
+    border-radius: 17px;
+    color: rgba(238, 255, 244, 0.74);
     font-size: 14px;
+    font-weight: 600;
+    transition: color 180ms ease, background-color 180ms ease, transform 180ms ease;
   }
   
-  nav a:hover {
-    color: var(--copper);
+  .social-link:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.06);
   }
   
-  /* Social icons and native sharing */
-  .social-icon,
+  .social-link:active {
+    transform: scale(0.96);
+  }
+  
+  .social-link svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  
+  .social-link:nth-of-type(2) svg,
+  .social-link .fill-dot {
+    fill: currentColor;
+    stroke: none;
+  }
+  
+  .dock-divider {
+    width: 1px;
+    align-self: center;
+    height: 34px;
+    background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.13), transparent);
+  }
+  
+  /* Existing native sharing control */
   .share-button {
     display: inline-flex;
     align-items: center;
@@ -233,9 +288,9 @@
     min-width: 44px;
     min-height: 44px;
     border-radius: 3px;
+    font-size: 14px;
   }
   
-  .social-icon svg,
   .share-button svg {
     width: 22px;
     height: 22px;
@@ -248,7 +303,7 @@
     border: 1px solid var(--line);
     background: transparent;
     color: var(--text);
-    font: inherit;
+    font-family: inherit;
     cursor: pointer;
   }
   
@@ -387,7 +442,7 @@
     }
   
     .bottom-bar {
-      flex-direction: column;
+      grid-template-columns: 1fr;
       gap: 18px;
       padding: 24px 0;
       text-align: center;
@@ -395,6 +450,10 @@
   
     .bottom-bar p {
       font-size: 12px;
+    }
+  
+    .bottom-bar > .share-button {
+      justify-self: center;
     }
   
     footer {
