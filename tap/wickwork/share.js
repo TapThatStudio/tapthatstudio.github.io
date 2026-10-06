@@ -7,7 +7,10 @@ const shareUrl = document.querySelector('#share-url');
 shareButton.hidden = false;
 
 shareButton.addEventListener('click', async () => {
-  const url = new URL(window.location.pathname, window.location.origin).href;
+  // Always share the public page, including when viewing a local preview.
+  const canonical = document.querySelector('link[rel="canonical"]');
+  const url = canonical?.href
+    || new URL(window.location.pathname, window.location.origin).href;
   const data = {
     title: 'Jaywick Woodworks',
     text: 'Handcrafted in wood. Built to last.',
