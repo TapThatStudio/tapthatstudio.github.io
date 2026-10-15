@@ -14,23 +14,23 @@ body { margin: 0; background: var(--bg); color: var(--text); -webkit-font-smooth
 a { color: inherit; text-decoration: none; }
 a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--sage); outline-offset: 4px; }
 .page { width: 100%; max-width: 640px; margin: auto; padding: 0 28px; }
-header { padding: 30px 0 0; text-align: center; }
+header { padding: 22px 0 0; text-align: center; }
 .location { color: var(--muted); font-size: 12px; letter-spacing: .16em; }
-main { padding: 26px 0 32px; text-align: center; }
-.brand-art img { display: block; width: 185px; max-width: 100%; height: auto; margin: 0 auto 26px; }
+main { padding: 18px 0 28px; text-align: center; }
+.brand-art img { display: block; width: clamp(150px, 38vw, 160px); max-width: 100%; height: auto; margin: 0 auto 18px; }
 h1 { font-size: clamp(32px, 7.5vw, 42px); line-height: 1.08; letter-spacing: -.025em; font-weight: 900; margin: 0 0 10px; }
-.tagline { color: var(--copper); font-size: clamp(20px, 4.5vw, 25px); font-weight: 700; line-height: 1.3; margin: 0 0 20px; }
-.description { color: #bfc2bb; font-size: 17px; line-height: 1.5; max-width: 380px; margin: 0 auto 23px; }
-.maker { max-width: 420px; margin: 0 auto 23px; padding-bottom: 23px; border-bottom: 3px solid var(--sage); }
-.headshot { display: block; width: clamp(176px, 45vw, 200px); max-width: 100%; height: auto; aspect-ratio: 4 / 3; border-radius: 8px; margin: 0 auto 18px; object-fit: cover; object-position: center top; }
+.tagline { color: var(--copper); font-size: clamp(20px, 4.5vw, 25px); font-weight: 700; line-height: 1.3; margin: 0 0 16px; }
+.description { color: #bfc2bb; font-size: 17px; line-height: 1.5; max-width: 380px; margin: 0 auto 18px; }
+.maker { max-width: 420px; margin: 0 auto 18px; padding-bottom: 18px; border-bottom: 3px solid var(--sage); }
+.headshot { display: block; width: clamp(176px, 45vw, 200px); max-width: 100%; height: auto; aspect-ratio: 4 / 3; border-radius: 8px; margin: 0 auto 14px; object-fit: cover; object-position: center top; }
 h2 { font-size: 20px; font-weight: 600; margin: 0 0 5px; }
 .maker p { font-size: 15px; line-height: 1.5; color: #bfc2bb; margin: 0; }
 .actions { display: grid; gap: 10px; max-width: 420px; margin: auto; }
 .button { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: .8rem 1.5rem; border: 2px solid var(--green); border-radius: .5rem; font-size: 1rem; font-weight: 700; line-height: 1.4; transition: background .18s, border-color .18s; }
 .primary { background: var(--green); color: #fff; }
 .primary:hover { background: #294726; border-color: #294726; }
-.secondary { background: #fff; color: var(--green); }
-.secondary:hover { background: #eef3ec; color: #294726; border-color: #294726; }
+.secondary { background: transparent; border-color: #75856c; color: #e0e7dc; }
+.secondary:hover { background: #263024; color: #fff; border-color: var(--sage); }
 .phone { display: inline-block; margin-top: 17px; font-size: 14px; letter-spacing: .07em; color: #bfc2bb; }
 .phone:hover { color: var(--text); }
 
@@ -56,6 +56,9 @@ h2 { font-size: 20px; font-weight: 600; margin: 0 0 5px; }
   /* Three-part social dock, matching the MrWill landing page. */
   .social-dock {
     grid-column: 1 / -1;
+    width: 100%;
+    max-width: 420px;
+    justify-self: center;
     display: grid;
     grid-template-columns: 1fr 1px 1fr 1px 1fr;
     align-items: stretch;
@@ -203,7 +206,7 @@ footer { flex-wrap: wrap; justify-content: center; text-align: center; column-ga
 .skip:focus { top: 10px; }
 @media (max-width: 370px) {
  .page { padding: 0 20px; }
- .brand-art img { width: 165px; }
+ .brand-art img { width: 150px; }
  .social-link { font-size: 13px; }
  .bottom-bar p { font-size: 11px; }
 }
