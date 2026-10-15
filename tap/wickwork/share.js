@@ -13,7 +13,7 @@ shareButton.addEventListener('click', async () => {
     || new URL(window.location.pathname, window.location.origin).href;
   const data = {
     title: 'Jaywick Woodworks',
-    text: 'Handcrafted in wood. Built to last.',
+    text: 'Handcrafted with passion. Dedicated to the details.',
     url,
   };
 
