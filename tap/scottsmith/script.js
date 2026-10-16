@@ -103,9 +103,22 @@ function updateGlassLight(event) {
 
 function updatePartyMode() {
   const partyPill = document.querySelector(".party-pill");
-  if (!partyPill) return;
+  const pillLabel = partyPill?.querySelector(".pill-label");
+  if (!partyPill || !pillLabel) return;
 
   const now = new Date();
+
+  // Vacation Mode runs through the end of Oct 25, 2026 (month is 0-based, so 9 = October)
+  const vacationEnds = new Date(2026, 9, 26, 0, 0, 0);
+
+  if (now < vacationEnds) {
+    pillLabel.textContent = "VACATION MODE";
+    partyPill.hidden = false;
+    return;
+  }
+
+  pillLabel.textContent = "PARTY MODE";
+
   const day = now.getDay();   // 0 = Sunday, 5 = Friday, 6 = Saturday
   const hour = now.getHours();
 
