@@ -105,7 +105,25 @@ function updatePartyMode() {
   const partyPill = document.querySelector(".party-pill");
   if (!partyPill) return;
 
+  // Remember the original label (e.g. "Party Mode") the first time this runs
+  if (!partyPill.dataset.defaultLabel) {
+    partyPill.dataset.defaultLabel = partyPill.textContent.trim();
+  }
+
   const now = new Date();
+
+  // Vacation Mode runs through the end of Oct 25, 2026 (month is 0-based, so 9 = October)
+  const vacationEnds = new Date(2026, 9, 26, 0, 0, 0);
+
+  if (now < vacationEnds) {
+    partyPill.textContent = "Vacation Mode";
+    partyPill.hidden = false;
+    return;
+  }
+
+  // Back to normal Party Mode behavior
+  partyPill.textContent = partyPill.dataset.defaultLabel;
+
   const day = now.getDay();   // 0 = Sunday, 5 = Friday, 6 = Saturday
   const hour = now.getHours();
 
